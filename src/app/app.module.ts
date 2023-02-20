@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { CartoonsComponent } from './cartoons/cartoons.component';
 import { CartoondetailComponent } from './cartoondetail/cartoondetail.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes:Routes=[
   {
@@ -32,6 +33,7 @@ const routes:Routes=[
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
+    HttpClientModule
 
   ],
   providers: [],
