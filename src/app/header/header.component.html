@@ -12,3 +12,13 @@
     </button>
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let cartoon of cartoonData">
+      <div class=" product card col-md-3 ">
+        <img src="{{cartoon.imageurl}}" alt="">
+      </div>
+    </ng-container>
+  </div>
+</div>

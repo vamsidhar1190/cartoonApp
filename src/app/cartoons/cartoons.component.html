@@ -1,1 +1,13 @@
+<app-header></app-header>
+
 <p>cartoons works!</p>
+<div class="container">
+    <div class="row">
+      <ng-container *ngFor="let cartoon of cartoonJson | paginate:{itemsPerPage:3, currentPage:p}">
+        <div class=" product card col-md-3 ">
+          <img src="{{cartoon.imageurl}}" alt="">
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <pagination-controls (pageChange)="p =$event" class="float-right"></pagination-controls>

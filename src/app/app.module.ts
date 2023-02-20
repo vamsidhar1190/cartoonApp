@@ -7,7 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { CartoonsComponent } from './cartoons/cartoons.component';
 import { CartoondetailComponent } from './cartoondetail/cartoondetail.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 const routes:Routes=[
   {
     path:'',component:HeaderComponent
@@ -33,7 +33,8 @@ const routes:Routes=[
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
 
   ],
   providers: [],

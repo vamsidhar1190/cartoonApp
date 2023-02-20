@@ -1,16 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-// import cartoons from '../assets/data'
-
-
-// interface Cartoons {
-//   id: Number;
-//   createdby: String;
-//   createddate: String;
-//   imageurl: String;
-//   description:String;
-// }
 
 @Component({
   selector: 'app-cartoons',
@@ -18,17 +8,23 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./cartoons.component.css']
 })
 export class CartoonsComponent implements OnInit {
-  // cartoon: Cartoons[] = CartoonJson;
 
 constructor (private httpClient:HttpClient) { }
+cartoonJson:any=[]
+p:any=[]
 
- var_name='../assets/../data/cartoons.json'
-  ngOnInit(): void {
-    this.httpClient.get(this.var_name)
-    .subscribe((data)=>{
-      console.log(data)
-    })
+ngOnInit(): void {
+   this.readingCartoonJson();
   }
+  public readingCartoonJson(){
+    this.httpClient.get("../../assets/data/cartoons.json").subscribe(res=> {
+      this.cartoonJson=res
+      console.log(this.cartoonJson);
+      
+    });
+        
+    
+    }  
+    }
 
 
-}

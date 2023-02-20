@@ -10,14 +10,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HeaderComponent  implements OnInit{
 
-  private URL = '../assets/data/cartoons.json';
-
   constructor(private httpClient: HttpClient) {}
-
+   cartoonData:any=[]
 
   ngOnInit(): void {
-    this.httpClient.get(this.URL).subscribe(console.log);
-    console.log('hello');
+    this.cartoonJson();
+  }
+  public cartoonJson(){
+    this.httpClient.get('../../assets/data/cartoons.json')
+    .subscribe(res=>{
+      this.cartoonData=res})
+    console.log(this.cartoonData);
 
 
   }
