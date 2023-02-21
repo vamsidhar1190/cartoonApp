@@ -8,6 +8,13 @@ import { CartoonsComponent } from './cartoons/cartoons.component';
 import { CartoondetailComponent } from './cartoondetail/cartoondetail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { FormsModule } from '@angular/forms';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+
+
+
 const routes:Routes=[
   {
     path:'',component:HeaderComponent
@@ -16,8 +23,12 @@ const routes:Routes=[
     path:'header',component:HeaderComponent
   },
   {
-    path:'cartoons',component:CartoonsComponent
+    path:'cartoons',component:CartoonsComponent,
+    
   },
+  {
+    path:'cartoons/:id',component:CartoondetailComponent
+  }
 ]
 
 
@@ -27,14 +38,25 @@ const routes:Routes=[
     AppComponent,
     HeaderComponent,
     CartoonsComponent,
-    CartoondetailComponent
+    CartoondetailComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
+    Ng2OrderModule,
+    FormsModule,
+    AutocompleteLibModule
+    
+    
+    
+    
+    
+    
 
   ],
   providers: [],

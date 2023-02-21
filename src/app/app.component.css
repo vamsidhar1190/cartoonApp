@@ -1,0 +1,13 @@
+.container{
+    margin-top: 0%;
+}
+.navbar{
+    background-color: cadetblue;
+}
+.cartoon{
+    border-radius: 50%;
+}
+p{
+    margin-top: 10px;
+    font-size: larger;
+}

@@ -1,1 +1,16 @@
-<p>cartoondetail works!</p>
+<div class="cartoons">
+    <div class="data">
+      <!-- <ng-container *ngIf="cartoonData" class="data"> -->
+        <div class=" product card col-md-3  ">
+          <a [routerLink]="['/cartoons',cartoonData.id]" routerLinkActive="routerActive">
+            <img src="{{cartoonData.imageurl}}" alt=""  class="imgone" ></a>
+         </div>
+         <div class="cartoondata">
+          <b>Created By:</b><h3>{{cartoonData.createdby}}</h3>
+          <b>Name:</b><h2>{{cartoonData.name}}</h2>
+          <b>Create Date:</b><h4>{{cartoonData.createddate}}</h4>
+          <b>Description:</b><p>{{cartoonData.description}}</p>
+         </div>
+      <!-- </ng-container> -->
+    </div>
+    </div>

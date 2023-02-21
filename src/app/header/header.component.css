@@ -9,7 +9,7 @@ body{
   width: 100%;
   position: relative;
   display: flex;
-  margin-bottom: 100%;
+  margin-bottom: 70%;
 }
 
 .searchTerm {
@@ -48,6 +48,35 @@ body{
   transform: translate(-50%, -50%);
 }
 
+
 .container{
-  margin-top: 15%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  gap:20px
+  
+}
+h1{
+  padding-top: 15%;
+  margin-left: 20px;
+ 
+  font-style: oblique;
+  color: seagreen;
+}
+.data{
+  margin-top: 10%;
+  width: 30%;
+  margin-left: 30%;
+  border: 3px solid #00B4CC;
+
+}
+.imageone{
+  width: 200px;
+}
+.cartoons{
+  gap:10px;
+}
+.ng-autocomplete{
+  margin-top: -24px;
+  margin-left:20px;
+  width: 350px;
 }

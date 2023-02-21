@@ -1,13 +1,12 @@
-<app-header></app-header>
+<div class="cartoons">
+  <div class="row">
+    <ng-container *ngFor="let cartoon of cartoonJson | paginate:{itemsPerPage:6, currentPage:p}; ">
+      <div class=" d-flex justify-content-center align-items-center product card col-md-3 w-30" >
+        <a [routerLink]="['/cartoons',cartoon.id]" routerLinkActive="routerActive">
+          <img src="{{cartoon.imageurl}}" alt=""  class="imgone" (click)="cartoons(cartoon)"></a>
 
-<p>cartoons works!</p>
-<div class="container">
-    <div class="row">
-      <ng-container *ngFor="let cartoon of cartoonJson | paginate:{itemsPerPage:3, currentPage:p}">
-        <div class=" product card col-md-3 ">
-          <img src="{{cartoon.imageurl}}" alt="">
-        </div>
-      </ng-container>
-    </div>
+      </div>
+    </ng-container>
   </div>
-  <pagination-controls (pageChange)="p =$event" class="float-right"></pagination-controls>
+</div>
+<pagination-controls (pageChange)="p =$event" class="float-right" class="pagination"></pagination-controls>

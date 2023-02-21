@@ -1,0 +1,10 @@
+.data{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    align-items: top;
+    padding: 80px;
+}
+.imgone{
+    width: 80%;
+}
