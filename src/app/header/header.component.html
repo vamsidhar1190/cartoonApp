@@ -1,24 +1,47 @@
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-    Bootstrap
-  </a>
-</nav>
+
 <div class="wrap">
   <div class="search">
-     <input type="text" class="searchTerm" placeholder="What are you looking for?">
+     <input type="text" class="searchTerm" placeholder="What are you looking for?"  [(ngModel)]="searchText">     
      <button type="submit" class="searchButton">
        <i class="fa fa-search"></i>
     </button>
   </div>
 </div>
+<!-- 
+<div class="data">
+<div class="ng-autocomplete">
+  <ng-autocomplete
+    [data]="this.cartoonData"
+    [searchKeyword]="keyword"
+    placeholder="Enter the Cartoon Name"    
+    historyIdentifier="this.cartoonData"
+    [itemTemplate]="itemTemplate"
+    [notFoundTemplate]="notFoundTemplate"
+     >
+  </ng-autocomplete>
+ 
+
+  <ng-template #itemTemplate let-item>
+    <a [innerHTML]="item.name"></a>
+  </ng-template>
+
+  <ng-template #notFoundTemplate let-notFound>
+    <div [innerHTML]="notFound"></div>
+  </ng-template>
+</div>
+</div> -->
+
+<h1>Trending Cartoons</h1>
 
 <div class="container">
-  <div class="row">
-    <ng-container *ngFor="let cartoon of cartoonData">
-      <div class=" product card col-md-3 ">
-        <img src="{{cartoon.imageurl}}" alt="">
+  <div class="row ">
+    <ng-container *ngFor="let cartoon of cartoonData.slice(0,4) | filter:searchText" >
+      <div class=" product card col-md-3 d-flex justify-content-center align-items-center">
+        <a routerLink="/cartoons" routerLinkActive="routerActive"  ></a>
+        <img  src="{{cartoon.imageurl}}" alt="" class="imageone" routerLink="/cartoons" routerLinkActive="routerActive">
+        <p>{{cartoon.createdby}}</p>
       </div>
     </ng-container>
   </div>
 </div>
+
