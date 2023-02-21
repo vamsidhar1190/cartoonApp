@@ -35,11 +35,10 @@
 
 <div class="container">
   <div class="row ">
-    <ng-container *ngFor="let cartoon of cartoonData.slice(0,4) | filter:searchText" >
+    <ng-container *ngFor="let cartoon of cartoonData.slice(0,4) | filter:searchText  | orderBy:'priority'" >
       <div class=" product card col-md-3 d-flex justify-content-center align-items-center">
         <a routerLink="/cartoons" routerLinkActive="routerActive"  ></a>
         <img  src="{{cartoon.imageurl}}" alt="" class="imageone" routerLink="/cartoons" routerLinkActive="routerActive">
-        <p>{{cartoon.createdby}}</p>
       </div>
     </ng-container>
   </div>

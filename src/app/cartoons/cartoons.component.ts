@@ -13,7 +13,8 @@ export class CartoonsComponent implements OnInit {
 
 constructor (private httpClient:HttpClient, private router:Router, private cartoonData:CartoonDataService ) { }
 cartoonJson:any=[]
-p:any=[]
+pagination!:number
+
 
 
 ngOnInit(): void {

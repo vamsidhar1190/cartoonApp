@@ -30,20 +30,21 @@ export class HeaderComponent  implements OnInit{
   }
 
    search(query:string){
-    this.cartoonData = this.res.filter((item:any)=>
+    this.cartoonData = this.res.filter((item)=>
     item.title.toLowerCase().includes(query.toLowerCase())
     );
   }
-     selectEvent(cartoon:any) {    
-    }
+    //  selectEvent(cartoon) {    
+    // }
   onChangeSearch(search: string) { 
     console.log("search",search);
-    
+  
   }
 
-data(event:any){
-  console.log(event.target.value);
-}
+// data(event:any){
+//   console.log(event.target.value);
+// }
+
 
 }
 

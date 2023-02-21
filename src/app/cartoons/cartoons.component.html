@@ -1,6 +1,6 @@
 <div class="cartoons">
   <div class="row">
-    <ng-container *ngFor="let cartoon of cartoonJson | paginate:{itemsPerPage:6, currentPage:p}; ">
+    <ng-container *ngFor="let cartoon of cartoonJson | paginate:{itemsPerPage:6, currentPage:pagination}; ">
       <div class=" d-flex justify-content-center align-items-center product card col-md-3 w-30" >
         <a [routerLink]="['/cartoons',cartoon.id]" routerLinkActive="routerActive">
           <img src="{{cartoon.imageurl}}" alt=""  class="imgone" (click)="cartoons(cartoon)"></a>
@@ -9,4 +9,4 @@
     </ng-container>
   </div>
 </div>
-<pagination-controls (pageChange)="p =$event" class="float-right" class="pagination"></pagination-controls>
+<pagination-controls (pageChange)="pagination=$event" class="float-right" class="pagination"></pagination-controls>
