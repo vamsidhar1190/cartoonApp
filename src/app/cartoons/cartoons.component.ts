@@ -3,8 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { CartoonDataService } from '../cartoon-data.service';
 import { myObj,mainObj } from '../interface';
-import myJson from '../../assets/data/cartoons.json'
-import { Observable } from 'rxjs';
 
 
 @Component({
@@ -15,45 +13,22 @@ import { Observable } from 'rxjs';
 export class CartoonsComponent implements OnInit {
 
 constructor (private httpClient:HttpClient, private router:Router, private cartoonData:CartoonDataService ) { }
-// cartoonJson:{
-//   id:number,
-//   createdby:string,
-//   name:string,
-//   createddate:string,
-//   imageurl:string,
-//   description:string,
-//   priority:string,
-//   mickyImgs:myObj[]
-// }[]=myJson
 
-cartoonJson:mainObj[]=[]
+public cartoonJson:mainObj[]=[]
 
+public pagination!:number
 
-pagination!:number
-
-getlocalstorage:any=[]
-localD:any
+public getlocalstorage:any
+public localD:myObj[]=[]
 
 ngOnInit(): void {
-   this.readingCartoonJson();
+  //  this.readingCartoonJson();
    this.getlocalstorage=localStorage.getItem('myData')
-   console.log(this.getlocalstorage);
    this.localD=JSON.parse(this.getlocalstorage)
-   console.log(this.localD);
-   
-   
-   
+  
   }
-  public readingCartoonJson(){
-    this.httpClient.get<mainObj[]>("../../assets/data/cartoons.json").subscribe((res)=> {
-      this.cartoonJson=res
-      console.log(this.cartoonJson[0].mickyImgs[0].imageurl);     
-    });    
-    }
-
-    cartoons(item:Object){
+      cartoons(item:Object){
       this.cartoonData.cartoonsdata(item)
-      console.log(this.cartoonData)
     }
 
 }

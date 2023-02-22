@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CartoonDataService } from '../cartoon-data.service';
 import myJson from '../../assets/data/cartoons.json'
-import { myObj } from '../interface';
+
 @Component({
   selector: 'app-cartoondetail',
   templateUrl: './cartoondetail.component.html',
   styleUrls: ['./cartoondetail.component.css']
 })
 export class CartoondetailComponent implements OnInit{
-  myCartoonData:{
+  public myCartoonData:{
     id:number,
     createdby:string,
     name:string,
@@ -30,13 +30,10 @@ export class CartoondetailComponent implements OnInit{
 constructor ( private cartoonDataService:CartoonDataService ){}
 
 ngOnInit(): void {
-  this.cartoons()
-  console.log(this.cartoonData);   
-  
+  this.cartoons()  
 }
  public onimageclick(image:string){
     this.cartoonData= this.cartoonDataService.cartoondata
-    console.log(this.cartoonData);     
   }
   cartoons(){
     this.cartoonData= this.cartoonDataService.cartoondata

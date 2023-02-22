@@ -43,7 +43,7 @@
     <ng-container *ngFor="let cartoon of cartoonData.slice(0,5) | filter:searchText  | orderBy:'priority' let i=index" >
       <div class=" product card col-md-2 d-flex justify-content-center align-items-center g-3">
         <a routerLink="['/cartoons',cartoon.id]" routerLinkActive="routerActive"  ></a>
-        <img  src="{{cartoon.imageurl}}" alt="" class="imageone" routerLink="/cartoons" routerLinkActive="routerActive" (click)="cartoons(cartoon,i)">
+        <img  src="{{cartoon.imageurl}}" alt="" class="imageone" routerLink="/cartoons" routerLinkActive="routerActive" (click)="cartoons(cartoon)">
       </div>
     </ng-container>
   </div>

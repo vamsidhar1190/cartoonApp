@@ -12,8 +12,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { FormsModule } from '@angular/forms';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
-
-
+import { NgSelectModule } from '@ng-select/ng-select';
 
 const routes:Routes=[
   {
@@ -50,7 +49,9 @@ const routes:Routes=[
     Ng2SearchPipeModule,
     Ng2OrderModule,
     FormsModule,
-    AutocompleteLibModule
+    AutocompleteLibModule,
+    NgSelectModule
+   
     
     
     

@@ -13,41 +13,35 @@ export class HeaderComponent  implements OnInit{
 
   constructor(private httpClient: HttpClient) {}
    
-  cartoonData:any=[]
-  searchText:string=""
-  res:myObj[]=[]
-  keyword='name'
+  public cartoonData:mainObj[]=[]
+  public searchText:string=""
+  public res:mainObj[]=[]
+  public keyword='name'
 
  ngOnInit(): void {
     this.cartoonJson();
    
   }
   public cartoonJson(){
-    this.httpClient.get('../../assets/data/cartoons.json')
+    this.httpClient.get<mainObj[]>('../../assets/data/cartoons.json')
     .subscribe(res=>{   
       this.cartoonData=res   
-      console.log(this.cartoonData);
       })
   }
-
+  
    search(query:string){
+      if(this.searchText && this.searchText.length>=3)
     this.cartoonData = this.res.filter((item)=>
     item.title.toLowerCase().includes(query.toLowerCase())
     );
   }
    
   onChangeSearch(search: string) { 
-    console.log("search",search);
+
     }
 
-data:any=[]
-cartoons(cartoon:any,index:number){
-  this.data= JSON.stringify(cartoon.mickyImgs)
-  console.log();
-  
-  
-  localStorage.setItem("myData",this.data)
-  
+    cartoons(cartoon:mainObj){
+  localStorage.setItem("myData",JSON.stringify(cartoon.mickyImgs))
 }
 
 }
