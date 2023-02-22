@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartoonDataService } from '../cartoon-data.service';
+import myJson from '../../assets/data/cartoons.json'
 import { myObj } from '../interface';
 @Component({
   selector: 'app-cartoondetail',
@@ -7,12 +8,29 @@ import { myObj } from '../interface';
   styleUrls: ['./cartoondetail.component.css']
 })
 export class CartoondetailComponent implements OnInit{
-  cartoonData:any={}
+  myCartoonData:{
+    id:number,
+    createdby:string,
+    name:string,
+    createddate:string,
+    imageurl:string,
+    description:string,
+    priority:string
+  }[]=myJson
+  cartoonData={
+    id:this.myCartoonData[0].id,
+    createdby:this.myCartoonData[0].createdby,
+    name:this.myCartoonData[0].name,
+    createddate:this.myCartoonData[0].createddate,
+    imageurl:this.myCartoonData[0].imageurl,
+    description:this.myCartoonData[0].description,
+    priority:this.myCartoonData[0].priority,
+  }
 
 constructor ( private cartoonDataService:CartoonDataService ){}
 
 ngOnInit(): void {
-  this.vamsi()
+  this.cartoons()
   console.log(this.cartoonData);   
 
   
@@ -22,7 +40,7 @@ ngOnInit(): void {
     console.log(this.cartoonData);   
     
   }
-  vamsi(){
+  cartoons(){
     this.cartoonData= this.cartoonDataService.cartoondata
   }
 

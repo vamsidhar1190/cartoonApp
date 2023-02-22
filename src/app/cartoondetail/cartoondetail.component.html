@@ -1,7 +1,7 @@
 <div class="cartoons">
     <div class="data">
-      <!-- <ng-container *ngIf="cartoonData" class="data"> -->
-        <div class=" product card col-md-3  ">
+      <ng-container *ngIf="cartoonData" class="data">
+        <div class=" product card col-md-3 d-flex justify-content-center align-items-center ">
           <a [routerLink]="['/cartoons',cartoonData.id]" routerLinkActive="routerActive">
             <img src="{{cartoonData.imageurl}}" alt=""  class="imgone" ></a>
          </div>
@@ -11,6 +11,6 @@
           <b>Created Date:</b><h4>{{cartoonData.createddate}}</h4>
           <b>Description:</b><p>{{cartoonData.description}}</p>
          </div>
-      <!-- </ng-container> -->
+      </ng-container>
     </div>
     </div>

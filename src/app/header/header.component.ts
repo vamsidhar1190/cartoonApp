@@ -1,6 +1,6 @@
 import { Component,ElementRef,OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { myObj } from '../interface';
+import { myObj , mainObj} from '../interface';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +12,8 @@ export class HeaderComponent  implements OnInit{
 
 
   constructor(private httpClient: HttpClient) {}
-   cartoonData:any=[]
+   
+  cartoonData:any=[]
   searchText:string=""
   res:myObj[]=[]
   keyword='name'
@@ -24,9 +25,10 @@ export class HeaderComponent  implements OnInit{
   }
   public cartoonJson(){
     this.httpClient.get('../../assets/data/cartoons.json')
-    .subscribe(res=>{
-      this.cartoonData=res})
-    console.log(this.cartoonData);
+    .subscribe(res=>{   
+      this.cartoonData=res   
+      console.log(this.cartoonData);
+      })
   }
 
    search(query:string){
@@ -44,7 +46,15 @@ export class HeaderComponent  implements OnInit{
 // data(event:any){
 //   console.log(event.target.value);
 // }
-
+x:any=[]
+cartoons(cartoon:any,index:number){
+  this.x= JSON.stringify(cartoon.mickyImgs)
+  console.log(cartoon.mickyImgs);
+  
+  
+  localStorage.setItem("myData",this.x)
+  
+}
 
 }
 

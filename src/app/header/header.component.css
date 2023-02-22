@@ -51,7 +51,7 @@ body{
 
 .container{
   margin-top: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
   gap:20px
   
 }
@@ -64,19 +64,32 @@ h1{
 }
 .data{
   margin-top: 10%;
-  width: 30%;
-  margin-left: 30%;
+  width: 385px;
+  margin-left: 28%;
   border: 3px solid #00B4CC;
 
 }
 .imageone{
-  width: 200px;
+  width: 150px;
 }
 .cartoons{
   gap:10px;
 }
 .ng-autocomplete{
-  margin-top: -24px;
-  margin-left:20px;
-  width: 350px;
+  margin-top: -23px;
+  margin-left:-1px;
+  width: 380px;
+}
+
+.icon{
+  color: white;
+  width: auto;
+}
+.searchicon{
+  background-color: #00B4CC;
+  width: 50px;
+  margin-left: 63%;
+  margin-top: -44px;
+  padding: 10px;
+  border-radius: 0 5px 5px 0;
 }
