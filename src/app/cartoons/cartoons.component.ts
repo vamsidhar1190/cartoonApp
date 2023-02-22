@@ -31,10 +31,17 @@ cartoonJson:mainObj[]=[]
 
 pagination!:number
 
-
+getlocalstorage:any=[]
+localD:any
 
 ngOnInit(): void {
    this.readingCartoonJson();
+   this.getlocalstorage=localStorage.getItem('myData')
+   console.log(this.getlocalstorage);
+   this.localD=JSON.parse(this.getlocalstorage)
+   console.log(this.localD);
+   
+   
    
   }
   public readingCartoonJson(){

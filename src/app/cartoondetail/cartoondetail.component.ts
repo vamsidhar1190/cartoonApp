@@ -32,13 +32,11 @@ constructor ( private cartoonDataService:CartoonDataService ){}
 ngOnInit(): void {
   this.cartoons()
   console.log(this.cartoonData);   
-
   
 }
  public onimageclick(image:string){
     this.cartoonData= this.cartoonDataService.cartoondata
-    console.log(this.cartoonData);   
-    
+    console.log(this.cartoonData);     
   }
   cartoons(){
     this.cartoonData= this.cartoonDataService.cartoondata

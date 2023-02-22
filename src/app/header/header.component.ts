@@ -18,10 +18,9 @@ export class HeaderComponent  implements OnInit{
   res:myObj[]=[]
   keyword='name'
 
-  
-  ngOnInit(): void {
+ ngOnInit(): void {
     this.cartoonJson();
-    
+   
   }
   public cartoonJson(){
     this.httpClient.get('../../assets/data/cartoons.json')
@@ -36,23 +35,18 @@ export class HeaderComponent  implements OnInit{
     item.title.toLowerCase().includes(query.toLowerCase())
     );
   }
-    //  selectEvent(cartoon) {    
-    // }
+   
   onChangeSearch(search: string) { 
     console.log("search",search);
-  
-  }
+    }
 
-// data(event:any){
-//   console.log(event.target.value);
-// }
-x:any=[]
+data:any=[]
 cartoons(cartoon:any,index:number){
-  this.x= JSON.stringify(cartoon.mickyImgs)
-  console.log(cartoon.mickyImgs);
+  this.data= JSON.stringify(cartoon.mickyImgs)
+  console.log();
   
   
-  localStorage.setItem("myData",this.x)
+  localStorage.setItem("myData",this.data)
   
 }
 
