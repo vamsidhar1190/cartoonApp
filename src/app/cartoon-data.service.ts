@@ -1,3 +1,4 @@
+import { mainObj } from './interface';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -9,11 +10,10 @@ export class CartoonDataService {
 
   cartoondata:any={}
 
-  cartoonsdata(item:any){
+  cartoonsdata(item:object){
     this.cartoondata=item
     console.log(this.cartoondata);
-    
+
   }
 
- 
 }

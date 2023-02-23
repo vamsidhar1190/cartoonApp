@@ -1,27 +1,27 @@
 
 <div class="wrap">
   <div class="search">
-     <input type="text" class="searchTerm" placeholder="What are you looking for?"  [(ngModel)]="searchText">     
+     <input type="text" class="searchTerm" placeholder="What are you looking for?"  [(ngModel)]="searchText">
      <button type="submit" class="searchButton">
        <i class="fa fa-search"></i>
     </button>
   </div>
 </div>
-
-<!-- <div class="data">
+<!--
+<div class="data">
 <div class="ng-autocomplete">
   <ng-autocomplete
     [data]="this.cartoonData"
     [searchKeyword]="keyword"
-    placeholder="Enter the Cartoon Name"    
+    placeholder="Enter the Cartoon Name"
     historyIdentifier="this.cartoonData"
     [itemTemplate]="itemTemplate"
     [notFoundTemplate]="notFoundTemplate"
      >
-    
+
 
   </ng-autocomplete>
- 
+
 
   <ng-template #itemTemplate let-item>
     <a [innerHTML]="item.name"></a>
